@@ -1,0 +1,21 @@
+table {
+    border: 1px solid;
+    /*border-collapse: separate;*/
+    text-align: center;
+}
+th, td {
+    width: 10px;
+    height: 10px;
+   /* border: 2px solid;*/
+/*--text-align: center;
+--color: green;*/
+}
+#s2{
+/*--background-color: grey;
+--font-size: 20;*/
+    color: green;
+    font-size: 20;
+}
+#s3{
+    color: red;
+}
