@@ -24,16 +24,16 @@ public class LifeCycle implements Runnable{
         round.fillRandom();
 
         while (true) {
-            //если такой ключ(раунд) есть тогда проверяем с на каком раунде был такой массив и останавливаем
+            //check matches
             if (lifeMap.containsKey(round)) {
-                //проверка на совпадение с нулевым раундом (массив из нулей)
+                //check: equals to zero
                 if (round.equals(new RoundOfLife(new int[n][k]))) {
                     mes = "Life ends";
                     //System.out.println("Round " + count);
                     //round.print();
                     //System.out.println("Life ends");
                 }
-                //проверка на совпадение с нулевым не прошла значит имеем стабильное состояние
+                //equals to zero = false -> Stable stance
                 else {
                     mes = "Stable stance after round " + (count -1);
                     //System.out.println("Stable stance after round " + count);
@@ -45,7 +45,7 @@ public class LifeCycle implements Runnable{
             lifeMap.put(round, count);
             //System.out.println("Round " + count);
             //round.print();
-            //создаем новый раудн с учетом правил игры
+            //construct new round
             round = new RoundOfLife(round);
             count++;
         }
