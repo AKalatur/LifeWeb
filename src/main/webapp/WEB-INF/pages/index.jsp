@@ -1,12 +1,13 @@
 <%--suppress XmlDuplicatedId --%>
 <%--<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>--%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <link rel='stylesheet' href='resources/css/Style.css' type='text/css'/>
+	<link href="<c:url value="/resources/css/Style.css" />" rel="stylesheet">
 </head>
 
 <body>
-	<form action="/Life">
+	<form action="/redirect">
 		<table class="table">
 			<tr>
 				<th colspan='3' id='s1'>INPUT SIZE OF ARRAY N*K</th>

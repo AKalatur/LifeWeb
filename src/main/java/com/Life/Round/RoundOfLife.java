@@ -1,6 +1,6 @@
-package com.Life;
+package com.Life.Round;
 
-//класс-обертка над массивом
+//wrapper class
 public class RoundOfLife{
     public final int[][] lArray;
 
@@ -8,7 +8,7 @@ public class RoundOfLife{
         this.lArray = lArray;
     }
 
-    //Конструирование нового раунда с учетом условий игры
+    //construction of a new round from previous round
     public RoundOfLife(RoundOfLife oldRound) {
         int[][] newRound = new int[oldRound.lArray.length][oldRound.lArray[0].length];
         for (int i = 0; i < oldRound.lArray.length; i++) {
@@ -23,7 +23,7 @@ public class RoundOfLife{
         this.lArray = newRound;
     }
 
-    //заполнение массива n*k случайным образом значениями 0 либо 1
+    //filling array with random value (0,1)
     public void fillRandom() {
         for (int i = 0; i < this.lArray.length; i++) {
             for (int j = 0; j < this.lArray[i].length; j++) {
@@ -32,7 +32,7 @@ public class RoundOfLife{
         }
     }
 
-    // подсчет кол-ва живых соседей точки (i,j)
+    // counting live neighbors of a point (i,j)
     public static int neighborhoodQuantity(int[][] array, int i, int j) {
         int count = 0;
         if (elemExist(i - 1, j - 1, array.length, array[i].length)) {
@@ -70,12 +70,12 @@ public class RoundOfLife{
         return count;
     }
 
-    // проверка наличия елемента в позиции (i,j) в массиве n*k
+    // check if the element (i,j) exist in array  n*k
     public static boolean elemExist(int i, int j, int n, int k) {
         return (i >= 0 && j >= 0) && (i < n && j < k);
     }
 
-    //отображение в консоле
+    //print in console
     public void print() {
         StringBuilder row = new StringBuilder();
         for (int[] aLArray : this.lArray) {
@@ -87,7 +87,7 @@ public class RoundOfLife{
         }
     }
 
-    // сравнение елементов
+    // equals
     @Override
     public boolean equals(Object obj) {
         RoundOfLife otherRound = (RoundOfLife) obj;
@@ -99,7 +99,7 @@ public class RoundOfLife{
         return true;
     }
 
-    //хеш код
+    //hash code
     @Override
     public int hashCode() {
         int res = 0;
